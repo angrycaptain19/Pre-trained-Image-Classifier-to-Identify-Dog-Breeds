@@ -72,11 +72,12 @@ def classify_images(images_dir, results_dic, model):
         image_path = images_dir + key
         classifier_label = classifier(image_path, model)
         classifier_label = classifier_label.lower().strip()
-        classifier_label = classifier_label.split(", ")
+        #classifier_label = classifier_label.split(", ")
+        print(classifier_label)
         #print(results_dic[value])
         print(classifier_label)
         print(type(classifier_label))
-        results_dic[key].append([classifier_label])
+        results_dic[key].append(classifier_label)
         true_label = results_dic[key][0]
         if true_label in classifier_label:
             print(results_dic[key])
