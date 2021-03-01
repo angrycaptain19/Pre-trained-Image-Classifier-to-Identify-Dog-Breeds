@@ -48,7 +48,7 @@ def get_input_args():
     # Replace None with parser.parse_args() parsed argument collection that 
     # you created with this function python check_images.py --dir <some_path>
     in_arg =parser.parse_args()
-    print(in_arg.dir)
-    print(in_arg.arch)
-    print(in_arg.dogfile)
+    #print(in_arg.dir)
+    #print(in_arg.arch)
+    #print(in_arg.dogfile)
     return parser.parse_args()
