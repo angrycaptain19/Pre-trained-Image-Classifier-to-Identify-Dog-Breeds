@@ -40,32 +40,9 @@ def get_pet_labels(image_dir):
       List. The list contains for following item:
          index 0 = pet image label (string)
     """
-    # Replace None with the results_dic dictionary that you created with this
-    # function
-    file_list = listdir("pet_images/")
-    result_dict = dict()
-    
-    pet_name = ""
-    i=0
-    for key in file_list:
-        pet_lable = ""
-        file_name = key.strip(' ').lower().split("_")
-        #print(file_name)
-        pet_name = file_name[:-1]
-        #print(pet_name)
-        for name in range(0, len(pet_name),1):
-            if name == (len(pet_name)-1):
-                pet_lable += pet_name[name]
-            else:
-                pet_lable += pet_name[name] +' '
-        pet_label=""
-        #for word in file_name:
-        #    if word.isalpha():
-        #        pet_name += word
-        #print(pet_lable)
-        result_dict[key] = pet_name
-        i+=1
-    
-    #print(result_dict)
-    print(result_dict)
-    return result_dict
+    results_dic = dict()
+    for filename in listdir(path='pet_images'):
+         pet_image_label = ''.join([i for i in filename if not i.isdigit()])[:-5].replace("_", " ").lower()
+         results_dic[filename] = [pet_image_label]
+         
+    return results_dic
