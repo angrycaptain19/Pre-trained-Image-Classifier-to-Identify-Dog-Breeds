@@ -71,7 +71,7 @@ def adjust_results4_isadog(results_dic, dogfile):
     """           
     # Creates dognames dictionary for quick matching to results_dic labels from
     # real answer & classifier's answer
-    dognames_dic = dict()
+    dognames_dic = {}
 
     # Reads in dognames from file, 1 name per line & automatically closes file
     with open(dogfile, "r") as infile:
@@ -114,7 +114,7 @@ def adjust_results4_isadog(results_dic, dogfile):
         print(results_dic[key][1])
         # Pet Image Label IS of Dog (e.g. found in dognames_dic)
         if results_dic[key][0] in dognames_dic:
-            
+
             # Classifier Label IS image of Dog (e.g. found in dognames_dic)
             # appends (1, 1) because both labels are dogs
             if results_dic[key][1] in dognames_dic:

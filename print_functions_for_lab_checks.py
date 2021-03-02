@@ -54,17 +54,16 @@ def check_creating_pet_image_labels(results_dic):
         # Code to print 10 key-value pairs (or fewer if less than 10 images)
         # & makes sure there are 40 pairs, one for each file in pet_images/
         stop_point = len(results_dic)
-        if stop_point > 10:
-            stop_point = 10
+        stop_point = min(stop_point, 10)
         print("\nPet Image Label Dictionary has", len(results_dic),
               "key-value pairs.\nBelow are", stop_point, "of them:")
-    
+
         # counter - to count how many labels have been printed
         n = 0
-    
+
         # for loop to iterate through the dictionary
         for key in results_dic:
- 
+
             # prints only first 10 labels
             if n < stop_point:
                 print("{:2d} key: {:>30}  label: {:>26}".format(n+1, key,
@@ -72,7 +71,7 @@ def check_creating_pet_image_labels(results_dic):
 
                 # Increments counter
                 n += 1
-            
+
             # If past first 10 (or fewer) labels the breaks out of loop
             else:
                 break
